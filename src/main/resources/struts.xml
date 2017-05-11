@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!-- 配置一个包，用来管理不同功能模块的action
+    name:属性表示包名，自定义名称
+    namespace:表示命名空间，可选，必须以斜杠开头,访问该包下的action的时候，需要加入命名空间的层次结构路径
+    extends:表示继承了Struts的核心功能包，想要使用Struts2中的核心功能，必须继承该包
+ -->
+    <package name="configuration" namespace="/demo" extends="struts-default">
+        <!--name:表示该action的名称，自定义名称
+            class:属性表示对于action的类的完全限定名
+            method:表示该Action类的方法名 ,可以省略，默认就是execute
+        -->
+        <action name="testConfigurationAction"
+                class="com.yinhai.demo.action.TestConfigurationAction"
+                method="execute">
+            <!-- name:对于action类的方法的返回值，以及对于处理的JSP页面 -->
+            <result name="success">/testConfiguration.jsp</result>
+        </action>
+    </package>
+    <!-- 请求参数的编码方式 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <!-- 指定被struts2处理的请求后缀类型。多个用逗号隔开 -->
+    <constant name="struts.action.extension" value="do" />
+    <constant name="struts.convention.package.locators" value="action,demo" />
+    <!-- 是否开启动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+</struts>
