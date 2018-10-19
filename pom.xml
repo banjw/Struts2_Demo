@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>  <!--为pom定义一些常量,在pom中的其它地方可以直接引用-->
-        <struts.version>2.5.10.1</struts.version>
+        <struts.version>2.5.17</struts.version>
     </properties>
 
     <dependencies>
